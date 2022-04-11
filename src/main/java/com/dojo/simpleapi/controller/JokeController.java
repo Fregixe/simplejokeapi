@@ -25,8 +25,7 @@ public class JokeController {
     @CrossOrigin
     @GetMapping("/jokes/{keyword}")
     public ResponseEntity<List<JokeModel>> getMeSomeJokes(@PathVariable String keyword) {
-        List<JokeModel> jokeModels = client.searchJokes(keyword);
-        return ResponseEntity.ok().body(jokeModels);
+        return ResponseEntity.ok().body(jokeService.getJokes(keyword));
     }
 
 }
