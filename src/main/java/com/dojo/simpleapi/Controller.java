@@ -12,14 +12,14 @@ import java.util.List;
 public class Controller {
     private final static ChuckNorrisClient client = new ChuckNorrisClient();
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin
     @GetMapping("/joke")
     public ResponseEntity<String> getMeAJoke() {
         Joke joke = client.getRandomJoke();
         return ResponseEntity.ok().body(joke.getValue());
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin
     @GetMapping("/jokes/{keyword}")
     public ResponseEntity<List<String>> getMeSomeJokes(@PathVariable String keyword) {
         List<Joke> jokes = client.searchJokes(keyword);
