@@ -1,11 +1,14 @@
 package com.dojo.simpleapi.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Joke {
+@AllArgsConstructor
+public class JokeModel {
 
     private String value;
 
